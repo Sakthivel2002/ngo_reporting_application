@@ -1,4 +1,5 @@
-# NGO Reporting System 
+# ngo_reporting_application
+An application for NGO's submit monthly reports (individually or in bulk) and lets an admin view a dashboard that summarizes and tracks the data.
 
 ## Tech Stack
 - **Frontend**: React 18 + Material-UI (MUI)
@@ -9,18 +10,26 @@
 
 
 ## Quick Setup (5 mins)
-git clone <repo>
+git clone https://github.com/Sakthivel2002/ngo_reporting_application.git
+
 cd ngo-reporting-app
 
 Option 1: Docker (Recommended)
 docker-compose up --build
 
 Option 2: Manual (Windows-friendly)
-cd backend && python manage.py migrate
+cd backend
+
+python manage.py makemigrations
+
+python manage.py migrate
 
 Terminal1: redis-server
+
 Terminal2: python manage.py runserver
+
 Terminal3: celery -A backend worker -l info -P solo
+
 Terminal4: cd frontend && npm start
 
 
@@ -29,10 +38,10 @@ Terminal4: cd frontend && npm start
 - Backend: http://localhost:8000/admin
 - API: http://localhost:8000/api/report/
 
-## Features Implemented ✅
+## Features Implemented 
 - Single report form (idempotent)
 - Bulk CSV upload w/ **async Celery processing**
-- **Real-time job progress** ("3/3 processed")
+- **Real-time job progress**
 - Admin dashboard w/ **month selector**
 - **Partial failure handling** (bad rows skipped)
 - **MUI components** + responsive design
