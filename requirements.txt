@@ -1,0 +1,10 @@
+Django
+djangorestframework
+celery
+redis
+django-cors-headers
+djangorestframework-simplejwt
+python-decouple
+pandas
+openpyxl
+celery[redis]
